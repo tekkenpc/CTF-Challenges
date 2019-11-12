@@ -15,3 +15,9 @@ checking http webpage:
 
 no hidden things in the source code. No robots.txt page available.
 
+Let's fire up dirbuster to look for folder or other hidden pages.
+
+Dirbuster reveals some interesting paths and even a backup tar file:
+
+<img width="580" alt="Screenshot 2019-11-13 at 00 29 38" src="https://user-images.githubusercontent.com/47299364/68719594-c07aab80-05ac-11ea-8ff1-6e16b396910c.png">
+
