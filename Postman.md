@@ -4,7 +4,7 @@ Starting with nmap scanning:
 
 <img width="904" alt="Screenshot 2019-11-11 at 23 34 24" src="https://user-images.githubusercontent.com/47299364/68626533-d5d3d500-04db-11ea-8e7e-498308f1450b.png">
 
-After performing the nmap scan we identify the regular ports ssh 22, http 80 and an interesting high port tcp 10000.
+After performing the nmap scan I identify the regular ports ssh 22, http 80 and an interesting high port tcp 10000.
 Quick internet search reveals that this port belongs to web application Webmin. Cool!
 
 The website reveals a regular page:
@@ -14,9 +14,9 @@ The website reveals a regular page:
 
 I've ran nikto and dirb to look for some hidden folders, or interesting ones, nothing was properly revealed.
 
-Let's run a second port scan to see if we missed something:
+Let's run a second port scan to see if I missed something:
 
-indeed we missed port 6379, Redis server:
+indeed I missed port 6379, Redis server:
 
 <img width="1367" alt="Screenshot 2019-11-11 at 23 46 41" src="https://user-images.githubusercontent.com/47299364/68627221-87bfd100-04dd-11ea-8463-014dde71bab6.png">
 
@@ -28,12 +28,12 @@ Basically the script only needs to destination and a username, common user on re
 
 <img width="1367" alt="Screenshot 2019-11-11 at 23 51 30" src="https://user-images.githubusercontent.com/47299364/68627510-382dd500-04de-11ea-828d-1a3ee3764119.png">
 
-And we're in as redis user:
+And I'm in as redis user:
 
 <img width="1367" alt="Screenshot 2019-11-11 at 23 54 06" src="https://user-images.githubusercontent.com/47299364/68627650-9490f480-04de-11ea-86d9-aeb717ed1c97.png">
 
 
-We can see that there's is a main user, Matt and it contains the user flag in the home directory. Unfortunately user redis don't have permissions to read it:
+I can see that there's is a main user, Matt and it contains the user flag in the home directory. Unfortunately user redis don't have permissions to read it:
 
 <img width="1367" alt="Screenshot 2019-11-11 at 23 55 44" src="https://user-images.githubusercontent.com/47299364/68627748-e5a0e880-04de-11ea-93e7-07d106ec8e6b.png">
 
@@ -60,7 +60,7 @@ Tried several attempts to connect to the box 10.10.10.160 using the private key,
 
 <img width="776" alt="Screenshot 2019-11-12 at 00 04 04" src="https://user-images.githubusercontent.com/47299364/68628138-f7cf5680-04df-11ea-9651-f092a3d785b8.png">
 
-That's when came to my mind that i didn't explore the port 10000 we found earlier yet. Let's have a look:
+That's when came to my mind that i didn't explore the port 10000 I found earlier yet. Let's have a look:
 
 Hum, webmin authentication portal:
 
@@ -68,7 +68,7 @@ Hum, webmin authentication portal:
 
 Let's give a try with user Matt and password computer2008
 
-We're in as Matt user:
+I'm in as Matt user:
 
 <img width="1371" alt="Screenshot 2019-11-12 at 00 07 23" src="https://user-images.githubusercontent.com/47299364/68628294-71ffdb00-04e0-11ea-81f7-89d2fe27f432.png">
 
@@ -86,7 +86,7 @@ Ok, let's give it a try. Firing up metasploit console:
 
 Let's choose the exploit number 2:
 
-Checking the options, to make sure we have everything and we do have everything:
+Checking the options, to make sure I have everything and I do have everything:
 
 <img width="986" alt="Screenshot 2019-11-12 at 00 12 23" src="https://user-images.githubusercontent.com/47299364/68628538-2c8fdd80-04e1-11ea-8187-2797ab792583.png">
 
@@ -103,7 +103,7 @@ Oh wait, webserver is running under https and the ssl flag was set to false. Aft
 
 <img width="982" alt="Screenshot 2019-11-12 at 00 15 37" src="https://user-images.githubusercontent.com/47299364/68628671-91e3ce80-04e1-11ea-9ed7-b9d4d506711c.png">
 
-yes, the exploit works and we get a shell:
+yes, the exploit works and I got a shell:
 
 <img width="1111" alt="Screenshot 2019-11-12 at 00 16 13" src="https://user-images.githubusercontent.com/47299364/68628699-b8a20500-04e1-11ea-8ee4-78b92c2786f1.png">
 
