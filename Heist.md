@@ -44,7 +44,11 @@ So now we have a second password but we don't have any user to match this:
 
 stealth1agent
 
+I need to admit that i guessed the user for this step. I saw the owner of the computer was "Hazard" so i guessed that there was at least one username with that name, and it was successfull:
 
+I user smbmap to try to list for any smb shares available in the box:
+
+<img width="721" alt="10" src="https://user-images.githubusercontent.com/47299364/69317869-2cf44b00-0c3c-11ea-9449-480b2091d9f6.png">
 
 powershell to download the script and execute it to get reverse shell:
 
