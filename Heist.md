@@ -27,7 +27,7 @@ Hum, interesting, Cisco config file. Well at least there are some user and hashe
 
 Ok so at this point we have two users and passwords that might be usefull later:
 
-rout3r-$uperP@ssword
+rout3r-$uperP@ssword \n
 admin-Q4)sJu\Y8qz*A3?d
 
 
