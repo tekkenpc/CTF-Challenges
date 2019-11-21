@@ -4,6 +4,33 @@ Initial port scanning against the target:
 
 root@kali:~# nmap -v -p 1-65535 -sV -O -sS -T4 10.10.10.149
 
+<img width="690" alt="1" src="https://user-images.githubusercontent.com/47299364/69317126-91160f80-0c3a-11ea-90f5-851907650dc8.png">
+
+<img width="708" alt="2" src="https://user-images.githubusercontent.com/47299364/69317154-9d9a6800-0c3a-11ea-88b4-cf8d246a2e2e.png">
+
+Cool, a webserver listening, let's check it out:
+
+<img width="1395" alt="3" src="https://user-images.githubusercontent.com/47299364/69317197-b4d95580-0c3a-11ea-88fd-79cb5f6c1e2c.png">
+
+Hum, login as guest? Let's go for it :)
+
+<img width="1393" alt="4" src="https://user-images.githubusercontent.com/47299364/69317239-ca4e7f80-0c3a-11ea-9770-92c32c151f2a.png">
+
+Sweet, even got a config file attached! Let's see the content:
+
+<img width="615" alt="5" src="https://user-images.githubusercontent.com/47299364/69317268-ddf9e600-0c3a-11ea-9dd7-c485e2e54628.png">
+
+Hum, interesting, Cisco config file. Well at least there are some user and hashes there. Let's crack them:
+
+<img width="662" alt="6" src="https://user-images.githubusercontent.com/47299364/69317302-f7029700-0c3a-11ea-8cb6-82b17d0ef24f.png">
+<img width="625" alt="7" src="https://user-images.githubusercontent.com/47299364/69317311-fe29a500-0c3a-11ea-8f4e-7ee7e0e82acd.png">
+
+Ok so at this point we have two users and passwords that might be usefull later:
+
+rout3r-$uperP@ssword
+admin-Q4)sJu\Y8qz*A3?d
+
+
 
 powershell to download the script and execute it to get reverse shell:
 
