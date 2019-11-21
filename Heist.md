@@ -60,6 +60,9 @@ Nice, we got something. A couple new users are visible.
 
 Then it was a game of trying the passwords i have from a couple steps above into the users available, until they worked with user Chase. The tool seen below it's a ruby script that will establish a powershell connection to the system:
 
+New user:password pair: 
+chase:Q4)sJu\Y8qz*A3?d
+
 <img width="1006" alt="12" src="https://user-images.githubusercontent.com/47299364/69318163-dcc9b880-0c3c-11ea-91e1-abe29a733fb8.png">
 
 And i got user flag:
