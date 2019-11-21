@@ -21,7 +21,7 @@ Dirbuster reveals some interesting paths and even a backup tar file:
 
 <img width="580" alt="Screenshot 2019-11-13 at 00 29 38" src="https://user-images.githubusercontent.com/47299364/68719594-c07aab80-05ac-11ea-8ff1-6e16b396910c.png">
 
-Under the page upload.php there's an upload box for images only, this is interesting as we can manipulate a php reverse shell to actually looks like a GIF file.
+Under the page upload.php there's an upload box for images only, this is interesting as I can manipulate a php reverse shell to actually looks like a GIF file.
 
 <img width="597" alt="4" src="https://user-images.githubusercontent.com/47299364/69315784-a9385f80-0c37-11ea-9a4b-033cb3c998e4.png">
 
@@ -43,7 +43,7 @@ The i can see the guly user home directory and the user flag there but unfortuna
 
 <img width="528" alt="8" src="https://user-images.githubusercontent.com/47299364/69316115-67f47f80-0c38-11ea-80cc-13bed49082cd.png">
 
-The crontab.guly is the key to escalate to user, basically it's checking the files under /tmp/ directory so we just need to create a proper file there that get's escaped with a reverse shell back to me:
+The crontab.guly is the key to escalate to user, basically it's checking the files under /tmp/ directory so I just need to create a proper file there that get's escaped with a reverse shell back to me:
 
 <img width="889" alt="9" src="https://user-images.githubusercontent.com/47299364/69316276-c4f03580-0c38-11ea-8e50-159f86b88378.png">
 
@@ -61,7 +61,7 @@ Found an interesting script in /usr/sbin/ folder that looks like below;
 
 <img width="642" alt="12" src="https://user-images.githubusercontent.com/47299364/69316442-23b5af00-0c39-11ea-9b7e-9205ca1777ca.png">
 
-As the script is not validating the inputs that we perform, i just tried some basic evading bash techniques:
+As the script is not validating the inputs that I perform, i just tried some basic evading bash techniques:
 using the interface name _space_ the command i wanted the script to execute as root:
 
 <img width="966" alt="13" src="https://user-images.githubusercontent.com/47299364/69316551-5f507900-0c39-11ea-9f83-3272f7cd3096.png">
