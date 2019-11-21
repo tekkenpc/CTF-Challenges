@@ -25,7 +25,7 @@ Hum, interesting, Cisco config file. Well at least there are some user and hashe
 <img width="662" alt="6" src="https://user-images.githubusercontent.com/47299364/69317302-f7029700-0c3a-11ea-8cb6-82b17d0ef24f.png">
 <img width="625" alt="7" src="https://user-images.githubusercontent.com/47299364/69317311-fe29a500-0c3a-11ea-8f4e-7ee7e0e82acd.png">
 
-Ok so at this point we have two users and passwords that might be usefull later:
+Ok so at this point I have two users and passwords that might be usefull later:
 
 rout3r-$uperP@ssword  | 
 admin-Q4)sJu\Y8qz*A3?d
@@ -40,7 +40,7 @@ Voilá, password cracked:
 
 <img width="453" alt="9" src="https://user-images.githubusercontent.com/47299364/69317655-b35c5d00-0c3b-11ea-8616-fa2b43bea6e6.png">
 
-So now we have a second password but we don't have any user to match this:
+So now I have a second password but I don't have any user to match this:
 
 stealth1agent
 
@@ -56,7 +56,7 @@ Let's try to use another tool, lookupsid.py to try to get users available in the
 
 <img width="538" alt="11" src="https://user-images.githubusercontent.com/47299364/69318001-7cd31200-0c3c-11ea-912e-76aaf8532c62.png">
 
-Nice, we got something. A couple new users are visible.
+Nice, I got something. A couple new users are visible.
 
 Then it was a game of trying the passwords i have from a couple steps above into the users available, until they worked with user Chase. The tool seen below it's a ruby script that will establish a powershell connection to the system:
 
@@ -89,7 +89,7 @@ Get-ChildItem firefox.exe_191115_065903.dmp -Recurse -File | Select-String "supp
 
 <img width="1043" alt="17" src="https://user-images.githubusercontent.com/47299364/69318558-ae98a880-0c3d-11ea-8aaa-645d8aa8d69e.png">
 
-So now we have another user and credentials:
+So now I have another user and credentials:
 
 admin@support.htb:4dD!5}x/re8]FBuZ
 
