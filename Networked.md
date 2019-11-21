@@ -66,3 +66,6 @@ using the interface name _space_ the command i wanted the script to execute as r
 
 <img width="966" alt="13" src="https://user-images.githubusercontent.com/47299364/69316551-5f507900-0c39-11ea-9f83-3272f7cd3096.png">
 
+And after that, root flag :)
+
+<img width="490" alt="14" src="https://user-images.githubusercontent.com/47299364/69316600-77c09380-0c39-11ea-8bc8-59ac54332e80.png">
