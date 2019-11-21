@@ -30,6 +30,20 @@ Ok so at this point we have two users and passwords that might be usefull later:
 rout3r-$uperP@ssword  | 
 admin-Q4)sJu\Y8qz*A3?d
 
+The online tool i used to crack the above hashes was not able to retrieve the clear text password for the secret password:
+
+So let's try to crack it in the hard way, using john with rockyou wordlist:
+
+<img width="762" alt="8" src="https://user-images.githubusercontent.com/47299364/69317632-a6d80480-0c3b-11ea-852e-f5a16ff04623.png">
+
+Voilá, password cracked:
+
+<img width="453" alt="9" src="https://user-images.githubusercontent.com/47299364/69317655-b35c5d00-0c3b-11ea-8616-fa2b43bea6e6.png">
+
+So now we have a second password but we don't have any user to match this:
+
+stealth1agent
+
 
 
 powershell to download the script and execute it to get reverse shell:
