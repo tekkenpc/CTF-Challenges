@@ -27,3 +27,17 @@ Looking into the /dev/shm/ there's david(the user) ssh private key:
 It's just a matter of getting it and trying to crack it using john:
 
 ![8](https://user-images.githubusercontent.com/47299364/70398649-f5e4ae80-1a1d-11ea-90f6-fc1d95b6b880.png)
+
+After cracking the password: hunter , i can finally login as david and get the user flag:
+
+![9](https://user-images.githubusercontent.com/47299364/70398663-10b72300-1a1e-11ea-87b6-10878a01d3e4.png)
+
+Let's poke around and see what's running:
+
+Interesting script running with sudo. Using GTFObins we can clearly exploit this(https://gtfobins.github.io/)
+
+![10](https://user-images.githubusercontent.com/47299364/70398686-3f34fe00-1a1e-11ea-8ada-f68dedbad9fb.png)
+
+After several attempts, i realized that the window screen matters to be able to run !/bin/sh and getting out of the script as root. Voilá, root shell :)
+
+<img width="652" alt="11" src="https://user-images.githubusercontent.com/47299364/70398714-86bb8a00-1a1e-11ea-97de-ad8c53990585.png">
