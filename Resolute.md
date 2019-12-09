@@ -35,3 +35,6 @@ let's use evil-winrm to connect to the machine:
 
 <img width="745" alt="Screenshot 2019-12-09 at 03 11 09" src="https://user-images.githubusercontent.com/47299364/70401856-9bede400-1a31-11ea-999a-d6fd7c940591.png">
 
+Cool, user flag is accomplished:
+
+<img width="547" alt="Screenshot 2019-12-09 at 03 13 12" src="https://user-images.githubusercontent.com/47299364/70401937-e66f6080-1a31-11ea-8ad7-88e92203eaa7.png">
