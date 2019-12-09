@@ -20,3 +20,8 @@ enum4linux -U -o 10.10.10.169
 <img width="885" alt="Screenshot 2019-12-09 at 01 47 59" src="https://user-images.githubusercontent.com/47299364/70399641-17499880-1a26-11ea-9538-7844a1f4f91c.png">
 
 <img width="966" alt="Screenshot 2019-12-09 at 01 48 24" src="https://user-images.githubusercontent.com/47299364/70399650-2af4ff00-1a26-11ea-95f7-c46639944714.png">
+
+Cool, looks like we have the password for the user marko:Welcome123!
+
+Let's try it:
+
