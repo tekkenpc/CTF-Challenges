@@ -18,7 +18,11 @@ Some interesting users, after several attempts the only interesting one was svc-
 
 <img width="1403" alt="5" src="https://user-images.githubusercontent.com/47299364/70398786-4f99a880-1a1f-11ea-872b-cacc121bb9f2.png">
 
-Let's crack it using john:
+Let's crack it using john, and the password for svc-alfresco is s3rvice:
 
 <img width="883" alt="6" src="https://user-images.githubusercontent.com/47299364/70398837-722bc180-1a1f-11ea-8832-d3e1b86d8722.png">
+
+With that we can use evil-winrm to authenticate to the machine using this account:
+
+<img width="431" alt="7" src="https://user-images.githubusercontent.com/47299364/70398850-9edfd900-1a1f-11ea-9fbb-10e52c082374.png">
 
