@@ -55,3 +55,16 @@ To accomplish the above there's also a need to access our localhost and provide 
 
 After that, the tool will tell us that we can ran another tool from the impacket tool suite, secretsdump.py that will perform hash dump from the users:
 
+<img width="1045" alt="16" src="https://user-images.githubusercontent.com/47299364/70398999-d0a56f80-1a20-11ea-98d5-4aefe830d5be.png">
+
+Nice, we have now the ntlm hash for administrator. There's no real need to try to crack this password, as we can use the Pass the Hash attack to login as administrator just providing the hash that we got above.
+
+<img width="1368" alt="18" src="https://user-images.githubusercontent.com/47299364/70399013-e3b83f80-1a20-11ea-89c4-c4ad3e61fb41.png">
+
+Success, we got the shell as:
+
+<img width="417" alt="17" src="https://user-images.githubusercontent.com/47299364/70399029-21b56380-1a21-11ea-8775-17016c3451ec.png">
+
+Let's call a shell to get our root flag :)
+
+<img width="753" alt="19" src="https://user-images.githubusercontent.com/47299364/70399041-37c32400-1a21-11ea-99e8-2aa1b14eade6.png">
