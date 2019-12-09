@@ -1,32 +1,24 @@
 Forest windows machine from HTB
 
+Starting with the typical nmap port scanning:
 
-PORT      STATE SERVICE      VERSION
-53/tcp    open  domain?
-88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2019-11-21 12:56:32Z)
-135/tcp   open  msrpc        Microsoft Windows RPC
-139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
-389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
-445/tcp   open  microsoft-ds Microsoft Windows Server 2008 R2 - 2012 microsoft-ds (workgroup: HTB)
-464/tcp   open  kpasswd5?
-593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
-636/tcp   open  tcpwrapped
-3268/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
-3269/tcp  open  tcpwrapped
-5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-9389/tcp  open  mc-nmf       .NET Message Framing
-47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-49664/tcp open  msrpc        Microsoft Windows RPC
-49665/tcp open  msrpc        Microsoft Windows RPC
-49666/tcp open  msrpc        Microsoft Windows RPC
-49667/tcp open  msrpc        Microsoft Windows RPC
-49669/tcp open  tcpwrapped
-49676/tcp open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
-49677/tcp open  msrpc        Microsoft Windows RPC
-49684/tcp open  msrpc        Microsoft Windows RPC
-49698/tcp open  msrpc        Microsoft Windows RPC
-49717/tcp open  msrpc        Microsoft Windows RPC
+<img width="796" alt="1" src="https://user-images.githubusercontent.com/47299364/70398759-f9c50080-1a1e-11ea-92be-15633971565d.png">
 
+<img width="1206" alt="2" src="https://user-images.githubusercontent.com/47299364/70398762-00537800-1a1f-11ea-9d00-ec683e2e34a2.png">
 
-Users:
-[+] 10.10.10.161:445 - HTB [ Administrator, Guest, krbtgt, sebastien, lucinda, svc-alfresco, andy, mark, santi, ricardo ] ( LockoutTries=0 PasswordMin=7 )
+The port scanning shows a bunch of ports opened. Ldap, SMB, etc.
+
+Let's try to enumerate some users using rpcclient:
+
+<img width="512" alt="3" src="https://user-images.githubusercontent.com/47299364/70398775-2bd66280-1a1f-11ea-8152-9eb0b3c2d262.png">
+
+<img width="1384" alt="4" src="https://user-images.githubusercontent.com/47299364/70398777-38f35180-1a1f-11ea-90a9-b713be11fe2e.png">
+
+Some interesting users, after several attempts the only interesting one was svc-alfresco that gave us a TGT ticket.
+
+<img width="1403" alt="5" src="https://user-images.githubusercontent.com/47299364/70398786-4f99a880-1a1f-11ea-872b-cacc121bb9f2.png">
+
+Let's crack it using john:
+
+<img width="883" alt="6" src="https://user-images.githubusercontent.com/47299364/70398837-722bc180-1a1f-11ea-8832-d3e1b86d8722.png">
+
