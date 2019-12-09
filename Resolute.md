@@ -23,5 +23,15 @@ enum4linux -U -o 10.10.10.169
 
 Cool, looks like we have the password for the user marko:Welcome123!
 
-Let's try it:
+After trying it, no success with user marko.
+
+Although this looks like a general password, let's bruteforce it in the other users.
+
+Gotcha, this password also works for user melanie:
+
+<img width="690" alt="Screenshot 2019-12-09 at 03 07 34" src="https://user-images.githubusercontent.com/47299364/70401729-326dd580-1a31-11ea-819d-7d015d568440.png">
+
+let's use evil-winrm to connect to the machine:
+
+<img width="745" alt="Screenshot 2019-12-09 at 03 11 09" src="https://user-images.githubusercontent.com/47299364/70401856-9bede400-1a31-11ea-999a-d6fd7c940591.png">
 
