@@ -38,3 +38,14 @@ let's use evil-winrm to connect to the machine:
 Cool, user flag is accomplished:
 
 <img width="547" alt="Screenshot 2019-12-09 at 03 13 12" src="https://user-images.githubusercontent.com/47299364/70401937-e66f6080-1a31-11ea-8ad7-88e92203eaa7.png">
+
+After having the melanie user i tried to look for ryan credentials. simply ran findstr /s /i ryan *.* in C:\ which revealed some files that contained the ryan's password:
+
+<img width="1391" alt="Screenshot 2019-12-09 at 23 16 45" src="https://user-images.githubusercontent.com/47299364/70489379-e89df180-1afb-11ea-840d-19eec1a6435f.png">
+
+Now that we have the password, let's login as ryan:
+
+<img width="642" alt="Screenshot 2019-12-09 at 23 44 14" src="https://user-images.githubusercontent.com/47299364/70489416-05d2c000-1afc-11ea-8d32-8ea77ec8e092.png">
+
+ryan belongs to some interesting groups, the most interesting one is DnsAdmins which can lead to privilege escalation(https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83)
+
