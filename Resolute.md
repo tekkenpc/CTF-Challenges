@@ -49,3 +49,26 @@ Now that we have the password, let's login as ryan:
 
 ryan belongs to some interesting groups, the most interesting one is DnsAdmins which can lead to privilege escalation(https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83)
 
+<img width="1179" alt="Screenshot 2019-12-09 at 23 53 52" src="https://user-images.githubusercontent.com/47299364/70489512-48949800-1afc-11ea-87dc-aed0b956d186.png">
+
+So the way this exploit works is, you need to craft a specific .dll which can be then loaded using dnscmd. Once that's done, the dns service needs to be restarted so this .dll get's picked up and executed.
+
+Let's craft our dll payload using msfvenon in order to generate a reverse shell back to us. For this i will also setup the metasploit reverse shell, an smbserver for the AD to download the dll file:
+
+<img width="1202" alt="Screenshot 2019-12-10 at 03 13 21" src="https://user-images.githubusercontent.com/47299364/70489621-990bf580-1afc-11ea-9462-9ad0b15944b6.png">
+
+<img width="1402" alt="Screenshot 2019-12-10 at 03 13 41" src="https://user-images.githubusercontent.com/47299364/70489637-a628e480-1afc-11ea-98fb-94f09b371006.png">
+
+<img width="711" alt="Screenshot 2019-12-10 at 03 14 06" src="https://user-images.githubusercontent.com/47299364/70489658-b17c1000-1afc-11ea-81cf-7934528b481a.png">
+
+Once all of this is setup, we just need to run the dnscmd command in the server and restart the dns service too:
+
+<img width="934" alt="Screenshot 2019-12-10 at 03 14 33" src="https://user-images.githubusercontent.com/47299364/70489718-d2dcfc00-1afc-11ea-8d3b-8a016e803d1c.png">
+
+Once this is done, we get a reverse shell back in our metasploit session as Administrator :)
+
+<img width="787" alt="Screenshot 2019-12-10 at 03 15 05" src="https://user-images.githubusercontent.com/47299364/70489760-ebe5ad00-1afc-11ea-805c-da9884755b73.png">
+
+and voila, root flag:
+
+<img width="713" alt="Screenshot 2019-12-10 at 03 15 19" src="https://user-images.githubusercontent.com/47299364/70489804-028c0400-1afd-11ea-8885-21df5e99db50.png">
