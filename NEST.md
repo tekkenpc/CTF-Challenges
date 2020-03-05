@@ -82,7 +82,20 @@ there was a particular file, ldap.conf that contains the hash for administrator 
 
 <img width="600" alt="Screenshot 2020-02-27 at 07 58 55" src="https://user-images.githubusercontent.com/47299364/75967883-c59d9680-5ecc-11ea-9557-a67932ee5866.png">
 
+Although i just realized that the encryption function uses some parameters that are specific for each user and i don't have the parameters for the admin. need to reverse engineer the Hqk executable to get those values, i used ILSpy to do that.
+
+<img width="1408" alt="Screenshot 2020-02-27 at 08 54 33" src="https://user-images.githubusercontent.com/47299364/75968160-3e9cee00-5ecd-11ea-8853-d9c607ff1eb6.png">
+
+the above show us the parameters, so we can go back to the same executable used in c.smith, change them and run it with the admin hash.
+
 bam, we got the admin password:
 
 <img width="790" alt="Screenshot 2020-02-27 at 08 17 54" src="https://user-images.githubusercontent.com/47299364/75967908-d0f0c200-5ecc-11ea-8878-cd47e45afad9.png">
 
+let's mount the file system using admin user to see the root flag
+
+<img width="684" alt="Screenshot 2020-02-27 at 08 53 49" src="https://user-images.githubusercontent.com/47299364/75968283-6a1fd880-5ecd-11ea-86ab-31f154327c48.png">
+
+<img width="1043" alt="Screenshot 2020-02-27 at 08 54 17" src="https://user-images.githubusercontent.com/47299364/75968342-828ff300-5ecd-11ea-9b87-eb622abbae9e.png">
+
+really fun box!
