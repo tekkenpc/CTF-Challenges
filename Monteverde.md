@@ -32,3 +32,18 @@ let's try to use that credentials with mhope:
 
 <img width="746" alt="Screenshot 2020-03-04 at 14 36 04" src="https://user-images.githubusercontent.com/47299364/75970837-3941a280-5ed1-11ea-8bca-c44aa32a8735.png">
 
+used evil-winrm to login with mhope user:
+
+<img width="973" alt="Screenshot 2020-03-04 at 14 39 34" src="https://user-images.githubusercontent.com/47299364/75970938-5fffd900-5ed1-11ea-9382-b151e1d22b03.png">
+
+found a .Azure folder that belongs to this user:
+
+<img width="1091" alt="Screenshot 2020-03-04 at 14 49 47" src="https://user-images.githubusercontent.com/47299364/75970988-6e4df500-5ed1-11ea-9cdf-d4371e214b03.png">
+
+there's a bunch of files inside that means machine is connected with Azure somehow.
+
+<img width="833" alt="Screenshot 2020-03-04 at 14 50 00" src="https://user-images.githubusercontent.com/47299364/75971042-7d34a780-5ed1-11ea-9989-6032d4ac6201.png">
+
+there was a very recent exploit using azure ad sync to get admin credentials and that's what i used:
+
+<img width="925" alt="Screenshot 2020-03-04 at 16 09 22" src="https://user-images.githubusercontent.com/47299364/75971119-95a4c200-5ed1-11ea-89d6-1a91b00ca902.png">
