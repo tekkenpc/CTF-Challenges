@@ -45,5 +45,13 @@ there's a bunch of files inside that means machine is connected with Azure someh
 <img width="833" alt="Screenshot 2020-03-04 at 14 50 00" src="https://user-images.githubusercontent.com/47299364/75971042-7d34a780-5ed1-11ea-9989-6032d4ac6201.png">
 
 there was a very recent exploit using azure ad sync to get admin credentials and that's what i used:
+to run this i had to upload the AdDecrypt.exe and mcrypt.dll necessary to run the exploit:
+
+<img width="1005" alt="Screenshot 2020-03-04 at 16 09 37" src="https://user-images.githubusercontent.com/47299364/75971267-d3a1e600-5ed1-11ea-8114-4bbb4cdff6cf.png">
 
 <img width="925" alt="Screenshot 2020-03-04 at 16 09 22" src="https://user-images.githubusercontent.com/47299364/75971119-95a4c200-5ed1-11ea-89d6-1a91b00ca902.png">
+
+<img width="1438" alt="Screenshot 2020-03-04 at 16 14 06" src="https://user-images.githubusercontent.com/47299364/75971313-e2889880-5ed1-11ea-9cd4-b230ebbd103d.png">
+
+and that's it, very fun box too :)
+
